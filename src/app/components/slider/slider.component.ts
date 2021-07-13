@@ -10,8 +10,11 @@ export class SliderComponent implements OnInit {
   genres: any[];
 
   constructor(private deezerRequest: DeezerRequestService) {
-    this.deezerRequest.getAllGenre()
-      .subscribe((genres: any) => this.genres = genres.data);
+    this.deezerRequest.getSelenaAlbum()
+      .subscribe((genres: any) => {
+        console.warn(genres);
+        this.genres = genres.data;
+      });
   }
 
   ngOnInit(): void {

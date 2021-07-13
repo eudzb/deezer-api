@@ -22,4 +22,10 @@ export class DeezerRequestService {
       headers: this.requestHeader
     });
   }
+
+  getSelenaAlbum() {
+    return this.http.get(`${this.API_URL}/selena`, {
+      headers: this.requestHeader
+    });
+  }
 }

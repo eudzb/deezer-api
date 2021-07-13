@@ -1,1 +1,86 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+#A4,
+#C4 {
+  opacity: 0;
+}
+
+svg path {
+  animation: var(--name-animation) 3s infinite;
+}
+
+@keyframes a2 {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  32% { opacity: 1; }
+  64% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes a3 {
+  0% { opacity: 0; }
+  24% { opacity: 0; }
+  42% { opacity: 0; }
+  62% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes b3 {
+  0% { opacity: 1; }
+  20% { opacity: 1; }
+  40% { opacity: 0; }
+  60% { opacity: 0; }
+  80% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes b4 {
+  0% { opacity: 0; }
+  16% { opacity: 0; }
+  35% { opacity: 0; }
+  53% { opacity: 0; }
+  86% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes c2 {
+  0% { opacity: 1; }
+  17% { opacity: 1; }
+  36% { opacity: 1; }
+  53% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes c3 {
+  0% { opacity: 0; }
+  15% { opacity: 0; }
+  30% { opacity: 1; }
+  50% { opacity: 1; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes d3 {
+  0% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 1; }
+  70% { opacity: 0; }
+  80% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes d4 {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  20% { opacity: 1; }
+  40% { opacity: 0; }
+  60% { opacity: 0; }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}

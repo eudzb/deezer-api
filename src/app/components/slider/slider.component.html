@@ -1,29 +1,73 @@
-<!--<div *ngIf="genres">-->
-<!--  <div class="carousel-item" *ngFor="let genre of genres">-->
-<!--    <img [src]="genre.picture_xl" [alt]="genre.name">-->
-<!--    <div class="carousel-caption d-none d-md-block">-->
-<!--      <h5>{{genre.name}}</h5>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--<img src="assets/img/deezer-white-icon.svg" class="deezer-icon">-->
+<div class="deezer-icon d-flex align-items-center">
+  <svg width="120" height="74" viewBox="0 0 120 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="deezer-colors" clip-path="url(#clip0)">
+      <g id="A">
+        <path id="A4" d="M24.5598 0H0V15.9234H24.5598V0Z" fill="#FED0CD"/>
+        <path id="A3" d="M24.5598 19.367H0V35.2904H24.5598V19.367Z" fill="#F87D76" style="--name-animation: a3"/>
+        <path id="A2" d="M24.5598 38.7096H0V54.633H24.5598V38.7096Z" fill="#E2372C" style="--name-animation: a2"/>
+        <path id="A1" d="M24.5598 58.0766H0V74H24.5598V58.0766Z" fill="#F78316"/>
+      </g>
+      <g id="B">
+        <path id="B4" d="M56.3063 0H31.7464V15.9234H56.3063V0Z" fill="#FFDA85" style="--name-animation: b4"/>
+        <path id="B3" d="M56.1197 19.367H31.5598V35.2904H56.1197V19.367Z" fill="#F0B324" style="--name-animation: b3"/>
+        <path id="B2" d="M56.1197 38.7096H31.5598V54.633H56.1197V38.7096Z" fill="#EA6033"/>
+        <path id="B1" d="M56.1197 58.0766H31.5598V74H56.1197V58.0766Z" fill="#C8325B"/>
+      </g>
+      <g id="C">
+        <path id="C4" d="M88.2392 0H63.6794V15.9234H88.2392V0Z" fill="#ECC7E3"/>
+        <path id="C3" d="M88.2392 19.367H63.6794V35.2904H88.2392V19.367Z" fill="#CB82B9" style="--name-animation: c3"/>
+        <path id="C2" d="M87.866 38.7096H63.3062V54.633H87.866V38.7096Z" fill="#913F7D" style="--name-animation: c2"/>
+        <path id="C1" d="M87.866 58.0766H63.3062V74H87.866V58.0766Z" fill="#57308E"/>
+      </g>
+      <g id="D">
+        <path id="D4" d="M119.799 0H95.2392V15.9234H119.799V0Z" fill="#45B878" style="--name-animation: d4"/>
+        <path id="D3" d="M119.799 19.367H95.2392V35.2904H119.799V19.367Z" fill="#1BB075" style="--name-animation: d3"/>
+        <path id="D2" d="M119.799 38.7096H95.2392V54.633H119.799V38.7096Z" fill="#1078B7"/>
+        <path id="D1" d="M119.799 58.0766H95.2392V74H119.799V58.0766Z" fill="#146FD0"/>
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0">
+        <rect width="119.799" height="74" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+
+
+
+
+  <span class="text-white">deezer</span>
+
+
+
+
+
 </div>
+
+
+
+
+
+<ngb-carousel *ngIf="genres" #carousel [showNavigationArrows]="true" [animation]="false" [showNavigationIndicators]="true">
+  <ng-template ngbSlide *ngFor="let genre of genres; index as i">
+    <div class="carousel-caption carousel-content">
+      <div class="d-flex flex-column">
+        <h2 class="carousel-title">{{genre.title}}</h2>
+        <h5 class="carousel-subtitle my-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</h5>
+        <span class="carousel-description justify-content-start">
+          Découvrir les morceaux liés au genre <b>{{genre.name}}</b>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right mx-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </span>
+      </div>
+      <img [src]="genre.cover_big" [alt]="genre.name">
+    </div>
+    <div class="picsum-img-wrapper dark-overlay-container">
+      <div class="dark-overlay"></div>
+      <img [src]="genre.cover_xl" [alt]="genre.name" class="slider-img-background">
+    </div>
+  </ng-template>
+</ngb-carousel>
