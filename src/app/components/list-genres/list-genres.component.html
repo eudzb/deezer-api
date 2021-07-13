@@ -1,0 +1,12 @@
+<div class="my-5 container mx-auto">
+  <div class="row" *ngIf="genres">
+    <div class="col-2 mb-3" *ngFor="let genre of genres">
+      <div class="card w-100">
+        <img class="card-img-top" [src]="genre.picture_medium" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{genre.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
