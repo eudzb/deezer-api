@@ -1,17 +1,22 @@
-<ngb-carousel *ngIf="albums" #carousel [showNavigationArrows]="true" [animation]="false" [showNavigationIndicators]="true">
+<ngb-carousel *ngIf="albums" #carousel [showNavigationArrows]="true" [animation]="false"
+              [showNavigationIndicators]="true">
   <ng-template ngbSlide *ngFor="let album of albums; index as i">
-    <div class="carousel-caption carousel-content d-flex flex-column flex-lg-row align-items-center justify-content-lg-between justify-content-center">
+    <div
+      class="carousel-caption carousel-content d-flex flex-column flex-lg-row align-items-center justify-content-lg-between justify-content-center">
       <div class="d-flex flex-column text-center text-lg-start left-info order-1 order-lg-0">
         <h4 class="top-selection-label mb-3">Les albums les plus écoutés</h4>
         <h2 class="carousel-title mb-2 mb-lg-0">{{album.title}}</h2>
-        <div class="carousel-subtitle my-3 d-flex align-items-center justify-content-center justify-content-lg-start">
+        <a [routerLink]="['/artist/', album.artist.id]"
+           class="carousel-subtitle my-3 d-flex align-items-center justify-content-center justify-content-lg-start text-decoration-none">
           <img [src]="album.artist.picture_xl" class="rounded-circle">
           <span class="my-2 text-white">{{album.artist.name}}</span>
-        </div>
+        </a>
         <a [routerLink]="['/album/', album.id]" class="carousel-description mx-auto mx-lg-0 text-decoration-none">
           <span>Découvrir l'album</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right mx-1" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+               class="bi bi-chevron-right mx-1" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
           </svg>
         </a>
       </div>

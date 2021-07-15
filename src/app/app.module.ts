@@ -11,10 +11,13 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {HomeComponent} from './pages/home/home.component';
 import {AlbumComponent} from './pages/album/album.component';
 import {MinuteSecondsPipe} from './pipes/minute-seconds.pipe';
+import {ArtistComponent} from './pages/artist/artist.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'album/:id', component: AlbumComponent},
+  {path: 'artist/:id', component: ArtistComponent},
   {path: '', component: HomeComponent},
   {path: '**', redirectTo: 'home'}
 ];
@@ -28,7 +31,9 @@ const routes: Routes = [
     NavbarComponent,
     HomeComponent,
     AlbumComponent,
-    MinuteSecondsPipe
+    MinuteSecondsPipe,
+    ArtistComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,

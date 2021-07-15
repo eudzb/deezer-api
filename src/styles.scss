@@ -88,3 +88,9 @@ svg path {
   80% { opacity: 0; }
   100% { opacity: 0; }
 }
+
+@media screen and (max-width: 768px) {
+  .pt-top-nav {
+    padding-top: 60px;
+  }
+}

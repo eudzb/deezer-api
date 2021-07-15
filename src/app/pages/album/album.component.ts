@@ -8,10 +8,8 @@ import {DeezerRequestService} from '../../services/deezer-request.service';
   styleUrls: ['./album.component.scss']
 })
 export class AlbumComponent implements OnInit {
-  isPlaying = false;
-  previewAudio = new Audio();
   album: any;
-  trackPlaying: number;
+  artistRelated: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -28,22 +26,13 @@ export class AlbumComponent implements OnInit {
         this.deezerRequest.getAlbum(params.id)
           .subscribe(album => {
             this.album = album;
+            this.initArtistRelated();
           });
       });
   }
 
-  onPlay(audio: any, trackId: number) {
-    this.trackPlaying = trackId;
-    this.isPlaying = true;
-    this.previewAudio.src = audio;
-    this.previewAudio.play();
-  }
-
-  onStop() {
-    if (!this.isPlaying) {
-      return;
-    }
-    this.isPlaying = false;
-    this.previewAudio.pause();
+  initArtistRelated() {
+    this.deezerRequest.getArtistRelated(this.album.artist.id)
+      .subscribe((artists: any) => this.artistRelated = artists.data);
   }
 }

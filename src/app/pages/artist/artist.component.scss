@@ -1,0 +1,40 @@
+.artist-picture {
+  height: 200px;
+  width: 200px;
+  transition: 0.3s ease;
+}
+
+.artist-sm-info {
+  font-size: 13px;
+  font-weight: 300;
+
+  span:not(:last-child)::after {
+    content: "•";
+    margin: auto 8px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .artist-picture {
+    height: 150px;
+    width: 150px;
+  }
+
+  .artist-sm-info span:not(:last-child)::after {
+    content: "";
+    margin: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .artist-picture {
+    height: 100px;
+    width: 100px;
+  }
+}

@@ -62,11 +62,16 @@
 .carousel-subtitle {
   font-size: 18px;
   font-weight: 300;
+  transition: 0.3s ease;
 
   img {
     width: 32px;
     height: 32px;
     margin-right: 8px;
+  }
+
+  span {
+    transition: 0.3s ease;
   }
 }
 
@@ -78,9 +83,11 @@
   width: fit-content;
 }
 
+.carousel-subtitle:hover span,
 .carousel-description:hover,
+.carousel-subtitle:focus-within span,
 .carousel-description:focus-within {
-  color: #1FA1DA;
+  color: #1FA1DA !important;
 }
 
 .carousel-content .album-cover {

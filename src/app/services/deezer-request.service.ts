@@ -13,9 +13,8 @@ export class DeezerRequestService {
     access_token: 'fr6ucYcCWyb6U09LRnVX5aLb2b0kjcydDNTDzQOoleS2qcZv1Q5'
   });
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {
+  }
 
   getAllGenre() {
     return this.http.get(`${this.API_URL}`, {
@@ -31,6 +30,24 @@ export class DeezerRequestService {
 
   getAlbum(albumId: number) {
     return this.http.get(`${this.API_URL}/album?id=${albumId}`, {
+      headers: this.requestHeader
+    });
+  }
+
+  getArtist(artistId: number) {
+    return this.http.get(`${this.API_URL}/artist?id=${artistId}`, {
+      headers: this.requestHeader
+    });
+  }
+
+  getArtistTopTrack(artistId: number) {
+    return this.http.get(`${this.API_URL}/artistTopTrack?id=${artistId}`, {
+      headers: this.requestHeader
+    });
+  }
+
+  getArtistRelated(artistId: number) {
+    return this.http.get(`${this.API_URL}/artistRelated?id=${artistId}`, {
       headers: this.requestHeader
     });
   }
