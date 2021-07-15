@@ -7,17 +7,16 @@ import {DeezerRequestService} from '../../services/deezer-request.service';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-  genres: any[];
+  albums: any[];
 
-  constructor(private deezerRequest: DeezerRequestService) {
-    this.deezerRequest.getSelenaAlbum()
-      .subscribe((genres: any) => {
-        console.warn(genres);
-        this.genres = genres.data;
-      });
-  }
+  constructor(private deezerRequest: DeezerRequestService) { }
 
   ngOnInit(): void {
+    this.initAlbum();
+  }
+
+  initAlbum() {
+    this.deezerRequest.getTop5Album().subscribe((albums: any) => this.albums = albums.data);
   }
 
 }

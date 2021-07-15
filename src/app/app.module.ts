@@ -1,24 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { SliderComponent } from './components/slider/slider.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AppComponent} from './app.component';
+import {SliderComponent} from './components/slider/slider.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ListGenresComponent } from './components/list-genres/list-genres.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ListGenresComponent} from './components/list-genres/list-genres.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {DeezerIconComponent} from './components/deezer-icon/deezer-icon.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {HomeComponent} from './pages/home/home.component';
+import {AlbumComponent} from './pages/album/album.component';
+import {MinuteSecondsPipe} from './pipes/minute-seconds.pipe';
+
+const routes: Routes = [
+  {path: 'home', component: HomeComponent},
+  {path: 'album/:id', component: AlbumComponent},
+  {path: '', component: HomeComponent},
+  {path: '**', redirectTo: 'home'}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     SliderComponent,
-    ListGenresComponent
+    ListGenresComponent,
+    DeezerIconComponent,
+    NavbarComponent,
+    HomeComponent,
+    AlbumComponent,
+    MinuteSecondsPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

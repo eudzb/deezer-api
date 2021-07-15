@@ -1,2 +1,4 @@
-<!--<app-slider></app-slider>-->
-<app-list-genres></app-list-genres>
+<app-navbar></app-navbar>
+<div [class.pt-top-nav]="actualUrl !== '/' && actualUrl !== '/home'">
+  <router-outlet></router-outlet>
+</div>

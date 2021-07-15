@@ -1,0 +1,29 @@
+.genre-card {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.genre-card:hover, .genre-card:focus-within {
+  transform: translateY(-24px);
+  outline: none;
+}
+
+.genre-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-genre-overlay {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(201, 56, 56, 0.7);
+  position: absolute;
+  z-index: 2;
+  transition: 0.3s ease;
+}
+
+.genre-card:hover .card-genre-overlay,
+.genre-card:focus-within .card-genre-overlay {
+  opacity: 1;
+}

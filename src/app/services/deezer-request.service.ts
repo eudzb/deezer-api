@@ -23,8 +23,14 @@ export class DeezerRequestService {
     });
   }
 
-  getSelenaAlbum() {
-    return this.http.get(`${this.API_URL}/selena`, {
+  getTop5Album() {
+    return this.http.get(`${this.API_URL}/topAlbum`, {
+      headers: this.requestHeader
+    });
+  }
+
+  getAlbum(albumId: number) {
+    return this.http.get(`${this.API_URL}/album?id=${albumId}`, {
       headers: this.requestHeader
     });
   }

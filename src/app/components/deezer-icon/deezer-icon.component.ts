@@ -3,19 +3,20 @@ import {filter} from 'rxjs/operators';
 import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-deezer-icon',
+  templateUrl: './deezer-icon.component.html',
+  styleUrls: ['./deezer-icon.component.scss']
 })
-export class AppComponent implements OnInit {
+export class DeezerIconComponent implements OnInit {
   actualUrl: string;
 
   constructor(private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(({urlAfterRedirects}: NavigationEnd) => this.actualUrl = urlAfterRedirects);
   }
+
 }

@@ -3,13 +3,17 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+.pt-top-nav {
+  padding-top: 84px;
+}
+
 #A4,
 #C4 {
   opacity: 0;
 }
 
 svg path {
-  animation: var(--name-animation) 3s infinite;
+  animation: var(--name-animation) 2s infinite;
 }
 
 @keyframes a2 {

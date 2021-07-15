@@ -1,0 +1,51 @@
+.explicit-tag {
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.album-sm-info {
+  font-size: 12px;
+
+  span:not(:last-child)::after {
+    content: "•";
+    margin: auto 8px;
+  }
+}
+
+.track-header span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.track-element {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+
+  span {
+    font-weight: 300;
+  }
+
+  .play-btn,
+  .stop-btn {
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    transition: 0.2s ease;
+  }
+
+  .play-btn:hover {
+    background: rgba(0, 0, 0, .2);
+  }
+
+  .stop-btn {
+    background: rgba(0, 0, 0, .7);
+  }
+
+  .stop-btn:hover {
+    background: #E83333;
+  }
+}
+
