@@ -28,6 +28,39 @@
   text-transform: uppercase;
 }
 
+.artist-album-container {
+  overflow-x: scroll;
+}
+
+.artist-album-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.artist-album-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.artist-album-element {
+  margin-right: 24px;
+
+  img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .artist-album-title {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .artist-album-year {
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .artist-picture {
     height: 150px;

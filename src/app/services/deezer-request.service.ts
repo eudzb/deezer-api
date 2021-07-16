@@ -42,6 +42,10 @@ export class DeezerRequestService {
     return this.http.get(`${this.API_URL}/genreArtist?id=${genreId}`);
   }
 
+  getArtistAlbum(artistId: number) {
+    return this.http.get(`${this.API_URL}/artistAlbum?id=${artistId}`);
+  }
+
   getPodcastFromGenre(genreId: number) {
     return this.http.get(`${this.API_URL}/genrePodcast?id=${genreId}`);
   }
