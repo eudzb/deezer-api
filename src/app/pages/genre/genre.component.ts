@@ -46,7 +46,6 @@ export class GenreComponent implements OnInit {
   initPodcastFromGenre(genreId: number) {
     this.deezerRequest.getPodcastFromGenre(genreId)
       .subscribe((podcast: any) => {
-        console.warn(podcast.data);
         this.genrePodcast = podcast.data;
       });
   }
