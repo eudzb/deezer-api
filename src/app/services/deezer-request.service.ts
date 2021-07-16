@@ -22,8 +22,14 @@ export class DeezerRequestService {
     });
   }
 
-  getTop5Album() {
+  getTopAlbums() {
     return this.http.get(`${this.API_URL}/topAlbum`, {
+      headers: this.requestHeader
+    });
+  }
+
+  getTopArtists() {
+    return this.http.get(`${this.API_URL}/topArtist`, {
       headers: this.requestHeader
     });
   }

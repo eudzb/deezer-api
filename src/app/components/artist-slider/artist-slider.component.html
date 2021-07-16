@@ -1,0 +1,7 @@
+<div class="d-flex align-items-center artist-related-container mt-5">
+  <a [routerLink]="['/artist/', artist.id]" *ngFor="let artist of artists"
+     class="d-flex flex-column text-decoration-none align-items-center col">
+    <img [src]="artist.picture_xl" class="rounded-circle shadow-sm">
+    <span class="text-dark mt-3">{{artist.name}}</span>
+  </a>
+</div>

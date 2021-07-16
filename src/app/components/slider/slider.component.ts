@@ -16,7 +16,7 @@ export class SliderComponent implements OnInit {
   }
 
   initAlbum() {
-    this.deezerRequest.getTop5Album().subscribe((albums: any) => this.albums = albums.data);
+    this.deezerRequest.getTopAlbums().subscribe((albums: any) => this.albums = albums.data);
   }
 
 }

@@ -1,12 +1,10 @@
-<div class="my-5 container mx-auto">
-  <div class="row" *ngIf="genres">
-    <a href="#" class="col-2 my-4 genre-card text-decoration-none text-dark" *ngFor="let genre of genres">
-      <div class="card w-100 border-0 genre-img-container">
-        <div class="card-genre-overlay rounded-circle d-flex align-items-center justify-content-center">
-          <h4 class="text-light text-center">{{genre.name}}</h4>
-        </div>
-        <img class="card-img-top rounded-circle" [src]="genre.picture_medium" alt="Card image cap">
+<div class="row" *ngIf="genres">
+  <a href="#" class="col-lg-3 col-sm-4 col-6 my-4 genre-card text-decoration-none text-dark" *ngFor="let genre of genres">
+    <div class="w-100 border-0 genre-img-container">
+      <div class="card-genre-overlay rounded d-flex align-items-center justify-content-center">
+        <h4 class="text-light text-center">{{genre.name}}</h4>
       </div>
-    </a>
-  </div>
+      <img class="genre-card-img rounded" [src]="genre.picture_medium" alt="Card image cap">
+    </div>
+  </a>
 </div>

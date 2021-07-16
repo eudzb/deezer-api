@@ -13,6 +13,7 @@ import {AlbumComponent} from './pages/album/album.component';
 import {MinuteSecondsPipe} from './pipes/minute-seconds.pipe';
 import {ArtistComponent} from './pages/artist/artist.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
+import { ArtistSliderComponent } from './components/artist-slider/artist-slider.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -33,13 +34,14 @@ const routes: Routes = [
     AlbumComponent,
     MinuteSecondsPipe,
     ArtistComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    ArtistSliderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})
   ],
   providers: [],
   bootstrap: [AppComponent]

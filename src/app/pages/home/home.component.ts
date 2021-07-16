@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DeezerRequestService} from '../../services/deezer-request.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  topArtists: any[];
 
-  constructor() { }
+  constructor(private deezerRequest: DeezerRequestService) {
+  }
 
   ngOnInit(): void {
+    this.initTopArtists();
+  }
+
+  initTopArtists() {
+    this.deezerRequest.getTopArtists()
+      .subscribe((artists: any) => {
+        this.topArtists = artists.data;
+      });
   }
 
 }
