@@ -5,7 +5,9 @@
      'shadow-sm': actualUrl !== '/' && actualUrl !== '/home'
      }"
      (scroll)="onScroll()">
-  <div class="container">
+  <div class="container d-flex align-items-center">
     <app-deezer-icon></app-deezer-icon>
+    <a [routerLink]="['/genre/0']" class="genres-label text-decoration-none"
+       [class.text-dark]="actualUrl !== '/' && actualUrl !== '/home'">Genres</a>
   </div>
 </nav>

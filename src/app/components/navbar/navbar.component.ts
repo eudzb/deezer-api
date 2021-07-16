@@ -26,14 +26,17 @@ export class NavbarComponent implements OnInit {
     }
     const nav = document.querySelector('#nav-menu') as HTMLElement;
     const deezerLabel = document.querySelector('#deezer-label') as HTMLElement;
+    const genresLabel = document.querySelector('.genres-label') as HTMLElement;
     if (window.scrollY > 70) {
       nav.classList.add('bg-white');
       nav.classList.add('shadow-sm');
       deezerLabel.classList.add('text-dark');
+      genresLabel.classList.add('text-dark');
     } else {
       nav.classList.remove('bg-white');
       nav.classList.remove('shadow-sm');
       deezerLabel.classList.remove('text-dark');
+      genresLabel.classList.remove('text-dark');
     }
   }
 }

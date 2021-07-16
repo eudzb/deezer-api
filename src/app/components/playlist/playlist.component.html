@@ -6,9 +6,10 @@
     <span class="col text-muted align-self-end text-end">Durée</span>
   </div>
   <div class="track-element p-3 row align-items-center" *ngFor="let track of playlist; let i = index">
-    <span class="track-position text-muted col-1 px-1">{{i+1}}</span>
+    <span class="track-position text-muted col-1 px-1">{{i + 1}}</span>
     <span class="track-position text-muted col-2 col-xl-1 px-1">
-        <button class="play-btn d-flex align-items-center justify-content-center" *ngIf="!isPlaying || trackPlaying !== i"
+        <button class="play-btn d-flex align-items-center justify-content-center"
+                *ngIf="!isPlaying || trackPlaying !== i"
                 (click)="onPlay(track.preview, i)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill"
                viewBox="0 0 16 16">
@@ -16,7 +17,8 @@
               d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
           </svg>
         </button>
-        <button class="stop-btn d-flex align-items-center justify-content-center" *ngIf="isPlaying && trackPlaying === i" (click)="onStop()">
+        <button class="stop-btn d-flex align-items-center justify-content-center"
+                *ngIf="isPlaying && trackPlaying === i" (click)="onStop()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-stop-fill"
                viewBox="0 0 16 16">
             <path
