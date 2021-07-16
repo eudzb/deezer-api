@@ -1,10 +1,12 @@
 <app-slider></app-slider>
-<div class="my-5 container mx-auto">
-  <h4 class="title-container mt-5 mb-3">Tous les genres</h4>
-  <app-list-genres></app-list-genres>
+<div *ngIf="!loading">
+  <div class="my-5 container mx-auto">
+    <h4 class="title-container mt-5 mb-3">Tous les genres</h4>
+    <app-list-genres></app-list-genres>
 
-  <div class="mt-5" *ngIf="topArtists">
-    <h4 class="title-container mb-0">Les artistes du moment</h4>
-    <app-artist-slider [artists]="topArtists"></app-artist-slider>
+    <div class="mt-5" *ngIf="topArtists">
+      <h4 class="title-container mb-0">Les artistes du moment</h4>
+      <app-artist-slider [artists]="topArtists"></app-artist-slider>
+    </div>
   </div>
 </div>

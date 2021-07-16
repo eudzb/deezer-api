@@ -1,60 +1,56 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeezerRequestService {
   API_URL = 'http://localhost:5000';
-  requestHeader = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials': 'true',
-    access_token: 'fr6ucYcCWyb6U09LRnVX5aLb2b0kjcydDNTDzQOoleS2qcZv1Q5'
-  });
 
   constructor(private http: HttpClient) {
   }
 
   getAllGenre() {
-    return this.http.get(`${this.API_URL}`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}`);
   }
 
   getTopAlbums() {
-    return this.http.get(`${this.API_URL}/topAlbum`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/topAlbum`);
   }
 
   getTopArtists() {
-    return this.http.get(`${this.API_URL}/topArtist`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/topArtist`);
   }
 
   getAlbum(albumId: number) {
-    return this.http.get(`${this.API_URL}/album?id=${albumId}`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/album?id=${albumId}`);
   }
 
   getArtist(artistId: number) {
-    return this.http.get(`${this.API_URL}/artist?id=${artistId}`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/artist?id=${artistId}`);
   }
 
   getArtistTopTrack(artistId: number) {
-    return this.http.get(`${this.API_URL}/artistTopTrack?id=${artistId}`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/artistTopTrack?id=${artistId}`);
   }
 
   getArtistRelated(artistId: number) {
-    return this.http.get(`${this.API_URL}/artistRelated?id=${artistId}`, {
-      headers: this.requestHeader
-    });
+    return this.http.get(`${this.API_URL}/artistRelated?id=${artistId}`);
+  }
+
+  getArtistFromGenre(genreId: number) {
+    return this.http.get(`${this.API_URL}/genreArtist?id=${genreId}`);
+  }
+
+  getPodcastFromGenre(genreId: number) {
+    return this.http.get(`${this.API_URL}/genrePodcast?id=${genreId}`);
+  }
+
+  getRadioFromGenre(genreId: number) {
+    return this.http.get(`${this.API_URL}/genreRadios?id=${genreId}`);
+  }
+
+  getGenreById(genreId: number) {
+    return this.http.get(`${this.API_URL}/genre?id=${genreId}`);
   }
 }

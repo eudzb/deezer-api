@@ -1,4 +1,4 @@
-<div class="container my-5" *ngIf="album">
+<div class="container my-5" *ngIf="!loading">
   <div class="d-flex align-items-start justify-content-start mb-md-5 mb-3">
     <img [src]="album.cover_xl"
          class="rounded shadow-sm album-cover">
@@ -16,7 +16,7 @@
         <span class="text-muted">{{album.nb_tracks}} titres</span>
         <span class="text-muted">{{album.duration | minuteSeconds}}</span>
         <span class="text-muted">{{album.release_date | date: 'dd/MM/yyyy'}}</span>
-        <span class="text-muted">{{album.fans}} fans</span>
+        <span class="text-muted">{{album.fans | number}} fans</span>
       </div>
     </div>
   </div>

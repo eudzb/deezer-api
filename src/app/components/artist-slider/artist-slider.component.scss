@@ -1,9 +1,10 @@
 .artist-related-container {
   overflow-x: scroll;
 
-  a {
+  .artist-element {
     margin-right: 16px;
     margin-bottom: 24px;
+    min-width: 10rem;
   }
 
   span {

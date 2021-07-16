@@ -8,6 +8,7 @@ import {DeezerRequestService} from '../../services/deezer-request.service';
 })
 export class HomeComponent implements OnInit {
   topArtists: any[];
+  loading = true;
 
   constructor(private deezerRequest: DeezerRequestService) {
   }
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.deezerRequest.getTopArtists()
       .subscribe((artists: any) => {
         this.topArtists = artists.data;
-      });
+      }).add(() => this.loading = false);
   }
 
 }

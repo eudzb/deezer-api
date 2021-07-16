@@ -10,6 +10,7 @@ import {DeezerRequestService} from '../../services/deezer-request.service';
 export class AlbumComponent implements OnInit {
   album: any;
   artistRelated: any;
+  loading = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +28,7 @@ export class AlbumComponent implements OnInit {
           .subscribe(album => {
             this.album = album;
             this.initArtistRelated();
-          });
+          }).add(() => this.loading = false);
       });
   }
 

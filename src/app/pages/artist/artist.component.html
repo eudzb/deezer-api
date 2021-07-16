@@ -6,7 +6,7 @@
       <h4 class="text-dark mb-sm-3 mb-2">{{artist.name}}</h4>
       <div class="d-flex flex-column flex-md-row align-items-md-center align-items-start artist-sm-info">
         <span class="text-muted mb-2 mb-md-0">{{artist.nb_album}} albums</span>
-        <span class="text-muted">{{artist.nb_fan}} fans</span>
+        <span class="text-muted">{{artist.nb_fan | number}} fans</span>
       </div>
     </div>
   </div>
@@ -21,5 +21,10 @@
     <div class="mt-3">
       <app-playlist [playlist]="topTracks"></app-playlist>
     </div>
+  </div>
+
+  <div class="mt-5" *ngIf="artistRelated">
+    <h4 class="artist-related-label mb-0">Artistes similaires</h4>
+    <app-artist-slider [artists]="artistRelated"></app-artist-slider>
   </div>
 </div>

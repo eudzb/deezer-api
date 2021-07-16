@@ -28,6 +28,13 @@
   }
 }
 
+.artist-related-label {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 768px) {
   .album-cover {
     height: 150px;

@@ -10,6 +10,8 @@ import {DeezerRequestService} from '../../services/deezer-request.service';
 export class ArtistComponent implements OnInit {
   artist: any;
   topTracks: any;
+  artistRelated: any[];
+  loading = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,7 +29,8 @@ export class ArtistComponent implements OnInit {
           .subscribe(artist => {
             this.artist = artist;
             this.initTopTracks();
-          });
+            this.initArtistRelated();
+          }).add(() => this.loading = false);
       });
   }
 
@@ -36,5 +39,12 @@ export class ArtistComponent implements OnInit {
       .subscribe((topTracks: any) => {
         this.topTracks = topTracks.data;
       });
+  }
+
+  initArtistRelated() {
+    this.deezerRequest.getArtistRelated(this.artist.id)
+        .subscribe((artists: any) => {
+          this.artistRelated = artists.data;
+        });
   }
 }

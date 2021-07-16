@@ -1,0 +1,23 @@
+<div class="container my-5" *ngIf="!loading">
+  <div class="d-flex align-items-center mb-5 genre-pills-container" *ngIf="genres">
+    <a [routerLink]="['/genre/', singleGenre.id]" *ngFor="let singleGenre of genres"
+       class="text-decoration-none genre-pill text-dark border-dark" [class.active-pill]="singleGenre.id === genre.id">
+      {{singleGenre.name}}
+    </a>
+  </div>
+  <h1 class="text-dark mb-5" *ngIf="genre">{{genre.name}}</h1>
+  <div class="mb-5" *ngIf="genreArtists && genreArtists.length > 0">
+    <h4 class="artist-related-label mb-0">Artistes liés au genre</h4>
+    <app-artist-slider [artists]="genreArtists"></app-artist-slider>
+  </div>
+  <div class="mb-5" *ngIf="genrePodcast && genrePodcast.length > 0">
+    <h4 class="artist-related-label mb-0">Podcast liés au genre</h4>
+    <div class="d-flex align-items-start col mt-5 podcasts-container">
+      <div *ngFor="let podcast of genrePodcast" class="podcast-element d-flex flex-column">
+        <img [src]="podcast.picture_xl" class="border-0 rounded">
+        <span class="mt-3 text-dark podcast-title">{{podcast.title}}</span>
+        <span class="mt-2 podcast-description text-muted">{{podcast.description}}</span>
+      </div>
+    </div>
+  </div>
+</div>

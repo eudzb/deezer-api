@@ -1,0 +1,76 @@
+.genre-cover {
+  height: 120px;
+  width: 120px;
+  transition: 0.3s ease;
+}
+
+.artist-related-label {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.genre-pills-container,
+.podcasts-container {
+  overflow-x: scroll;
+}
+
+.genre-pills-container::-webkit-scrollbar,
+.podcasts-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.genre-pills-container,
+.podcasts-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.genre-pill {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-align: center;
+  padding: 4px 8px;
+  border: 1px solid;
+  border-radius: 12px;
+  margin-right: 16px;
+  clear: both;
+  display: inline-block;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.active-pill,
+.genre-pill:hover {
+  background: rgb(201, 56, 56);
+  border-color: rgb(201, 56, 56) !important;
+  color: white !important;
+}
+
+.podcast-element {
+  margin-right: 24px;
+
+  img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .podcast-title {
+    font-weight: 500;
+  }
+
+  .podcast-description {
+    font-size: 12px;
+    font-weight: 300;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+}

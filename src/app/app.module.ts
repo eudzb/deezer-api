@@ -12,13 +12,15 @@ import {HomeComponent} from './pages/home/home.component';
 import {AlbumComponent} from './pages/album/album.component';
 import {MinuteSecondsPipe} from './pipes/minute-seconds.pipe';
 import {ArtistComponent} from './pages/artist/artist.component';
-import { PlaylistComponent } from './components/playlist/playlist.component';
-import { ArtistSliderComponent } from './components/artist-slider/artist-slider.component';
+import {PlaylistComponent} from './components/playlist/playlist.component';
+import {ArtistSliderComponent} from './components/artist-slider/artist-slider.component';
+import {GenreComponent} from './pages/genre/genre.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'album/:id', component: AlbumComponent},
   {path: 'artist/:id', component: ArtistComponent},
+  {path: 'genre/:id', component: GenreComponent},
   {path: '', component: HomeComponent},
   {path: '**', redirectTo: 'home'}
 ];
@@ -35,7 +37,8 @@ const routes: Routes = [
     MinuteSecondsPipe,
     ArtistComponent,
     PlaylistComponent,
-    ArtistSliderComponent
+    ArtistSliderComponent,
+    GenreComponent
   ],
   imports: [
     BrowserModule,
