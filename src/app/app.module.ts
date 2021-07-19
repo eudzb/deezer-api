@@ -15,12 +15,18 @@ import {ArtistComponent} from './pages/artist/artist.component';
 import {PlaylistComponent} from './components/playlist/playlist.component';
 import {ArtistSliderComponent} from './components/artist-slider/artist-slider.component';
 import {GenreComponent} from './pages/genre/genre.component';
+import {FormsModule} from '@angular/forms';
+import {SearchComponent} from './pages/search/search.component';
+import { AlbumSliderComponent } from './components/album-slider/album-slider.component';
+import { PodcastSliderComponent } from './components/podcast-slider/podcast-slider.component';
+import { RadioSliderComponent } from './components/radio-slider/radio-slider.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'album/:id', component: AlbumComponent},
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'genre/:id', component: GenreComponent},
+  {path: 'search/:query', component: SearchComponent},
   {path: '', component: HomeComponent},
   {path: '**', redirectTo: 'home'}
 ];
@@ -38,13 +44,18 @@ const routes: Routes = [
     ArtistComponent,
     PlaylistComponent,
     ArtistSliderComponent,
-    GenreComponent
+    GenreComponent,
+    SearchComponent,
+    AlbumSliderComponent,
+    PodcastSliderComponent,
+    RadioSliderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})
+    RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'}),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -57,4 +57,24 @@ export class DeezerRequestService {
   getGenreById(genreId: number) {
     return this.http.get(`${this.API_URL}/genre?id=${genreId}`);
   }
+
+  getSearchAlbums(search: string) {
+    return this.http.get(`${this.API_URL}/searchAlbums?search=${search}`);
+  }
+
+  getSearchArtists(search: string) {
+    return this.http.get(`${this.API_URL}/searchArtists?search=${search}`);
+  }
+
+  getSearchPodcasts(search: string) {
+    return this.http.get(`${this.API_URL}/searchPodcasts?search=${search}`);
+  }
+
+  getSearchRadios(search: string) {
+    return this.http.get(`${this.API_URL}/searchRadios?search=${search}`);
+  }
+
+  getSearchTracks(search: string) {
+    return this.http.get(`${this.API_URL}/searchTracks?search=${search}`);
+  }
 }
