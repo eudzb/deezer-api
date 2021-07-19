@@ -35,6 +35,7 @@ export class SearchComponent implements OnInit {
         this.getAlbums(params.query);
         this.getPodcasts(params.query);
         this.getRadios(params.query);
+        this.loading = false;
       });
   }
 

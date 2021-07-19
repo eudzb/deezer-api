@@ -1,4 +1,4 @@
-<div class="container my-5" *ngIf="searchQuery">
+<div class="container my-5" *ngIf="searchQuery && !loading">
   <h1 class="text-dark mb-5">Recherche : {{searchQuery}}</h1>
 
   <div class="mb-5 d-flex flex-column" *ngIf="tracks && tracks.length > 0">
