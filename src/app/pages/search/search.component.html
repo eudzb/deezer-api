@@ -1,0 +1,32 @@
+<div class="container my-5" *ngIf="searchQuery">
+  <h1 class="text-dark mb-5">Recherche : {{searchQuery}}</h1>
+
+  <div class="mb-5 d-flex flex-column" *ngIf="tracks && tracks.length > 0">
+    <h4 class="title-section text-dark mb-3">Morceaux</h4>
+    <app-playlist [playlist]="tracks" type="'search'"></app-playlist>
+  </div>
+
+  <div class="mb-5 d-flex flex-column" *ngIf="artists && artists.length > 0">
+    <h4 class="title-section text-dark mb-0">Artistes</h4>
+    <app-artist-slider [artists]="artists"></app-artist-slider>
+  </div>
+
+  <div class="mb-5 d-flex flex-column" *ngIf="albums && albums.length > 0">
+    <h4 class="title-section text-dark mb-0">Albums</h4>
+    <app-album-slider [albums]="albums" [type]="'search'"></app-album-slider>
+  </div>
+
+  <div class="mb-5 d-flex flex-column" *ngIf="podcasts && podcasts.length > 0">
+    <h4 class="title-section text-dark mb-0">Podcasts</h4>
+    <app-podcast-slider [podcasts]="podcasts"></app-podcast-slider>
+  </div>
+
+  <div class="mb-5 d-flex flex-column" *ngIf="radios && radios.length > 0">
+    <h4 class="title-section text-dark mb-0">Radios</h4>
+    <app-radio-slider [radios]="radios"></app-radio-slider>
+  </div>
+
+  <div *ngIf="tracks.length === 0 && artists.length === 0 && albums.length === 0 && podcasts.length === 0 && radios.length === 0">
+    <h4 class="title-section text-dark mb-0">Aucun résultat n'a été trouvé 😭</h4>
+  </div>
+</div>
