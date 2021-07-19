@@ -11,4 +11,58 @@ nav {
     color: white;
     margin-left: 40px;
   }
+
+  .search-input-container {
+    position: relative;
+    margin-left: 40px;
+    width: 100%;
+    max-width: 350px;
+
+    #search-icon,
+    #clear-icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+    }
+
+    #search-icon {
+      left: 4px;
+    }
+
+    #clear-icon {
+      right: 4px;
+    }
+
+    .search-icon-white {
+      fill: white;
+    }
+
+    .search-icon-dark {
+      fill: #343a40;
+    }
+
+    .search-input {
+      padding: 4px 32px 4px 32px;
+      width: 100%;
+      font-size: 14px;
+      border: 0;
+      border-bottom: 1px solid;
+      font-weight: 300;
+      background: transparent;
+      outline: none;
+      color: white;
+    }
+
+    .search-input-white {
+      border-bottom-color: white;
+      color: white;
+    }
+
+    .search-input-dark {
+      border-bottom-color: rgba(0, 0, 0, 0.5) !important;
+      color: #343a40 !important;
+    }
+  }
 }
