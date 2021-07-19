@@ -1,7 +1,6 @@
 import {Component, OnInit, HostListener} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import {filter} from 'rxjs/operators';
-import {DeezerRequestService} from '../../services/deezer-request.service';
 
 @Component({
   selector: 'app-navbar',
