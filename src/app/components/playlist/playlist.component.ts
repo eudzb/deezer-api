@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PlaylistComponent implements OnInit {
   @Input() playlist: any[];
   @Input() label: string;
+  @Input() type = null;
   isPlaying = false;
   previewAudio = new Audio();
   trackPlaying: number;

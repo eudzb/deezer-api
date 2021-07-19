@@ -39,3 +39,12 @@
   font-size: 13px;
   font-weight: 300;
 }
+
+.track-artist-name {
+  font-weight: 300;
+  transition: 0.3s ease;
+}
+
+.track-artist-name:hover {
+  color: #1FA1DA !important;
+}

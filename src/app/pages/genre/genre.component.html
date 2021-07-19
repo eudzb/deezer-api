@@ -12,21 +12,10 @@
   </div>
   <div class="mb-5" *ngIf="genrePodcast && genrePodcast.length > 0">
     <h4 class="artist-related-label mb-0">Podcasts liés au genre</h4>
-    <div class="d-flex align-items-start col mt-5 podcasts-container">
-      <div *ngFor="let podcast of genrePodcast" class="podcast-element d-flex flex-column">
-        <img [src]="podcast.picture_xl" class="border-0 rounded">
-        <span class="mt-3 text-dark podcast-title">{{podcast.title}}</span>
-        <span class="mt-2 podcast-description text-muted">{{podcast.description}}</span>
-      </div>
-    </div>
+    <app-podcast-slider [podcasts]="genrePodcast"></app-podcast-slider>
   </div>
   <div class="mb-5" *ngIf="genreRadios && genreRadios.length > 0">
     <h4 class="artist-related-label mb-0">Radios liés au genre</h4>
-    <div class="d-flex align-items-start col mt-5 podcasts-container">
-      <div *ngFor="let radio of genreRadios" class="podcast-element d-flex flex-column">
-        <img [src]="radio.picture_xl" class="border-0 rounded">
-        <span class="mt-3 text-dark podcast-title">{{radio.title}}</span>
-      </div>
-    </div>
+    <app-radio-slider [radios]="genreRadios"></app-radio-slider>
   </div>
 </div>
